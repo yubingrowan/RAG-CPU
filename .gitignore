@@ -1,0 +1,77 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+ui.log
+
+# Data
+data/*.json
+data/bm25_index.json
+data/eval_dataset.json
+data/eval_results*.json
+qdrant_data/
+
+# Models (large files, should use git-lfs or download separately)
+models/*.gguf
+models/*/
+!models/.gitkeep
+
+# Test files
+test_*.py
+!tests/test_*.py
+
+# Temporary files
+*.tmp
+*.bak
+.DS_Store
+
+# Ray
+ray_results/
+session_*.yaml
+
+# Kafka
+kafka-logs/
+
+# Redis
+dump.rdb
+
+# llama.cpp build (external)
+llama.cpp/build/
+llama.cpp/*.o
+
+# ray-gpu-cluster (separate repository)
+ray-gpu-cluster/

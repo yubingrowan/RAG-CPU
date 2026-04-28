@@ -1,0 +1,68 @@
+# Ray Cluster Configuration
+cluster_name: "rag-cluster"
+
+# Head node configuration
+head_node:
+  hostname: "localhost"
+  resources:
+    CPU: 4
+    memory: 16GiB
+    GPU: 0
+  
+# Worker nodes configuration
+worker_nodes:
+  - hostname: "worker-1"
+    resources:
+      CPU: 8
+      memory: 32GiB
+      GPU: 1
+  - hostname: "worker-2"
+    resources:
+      CPU: 8
+      memory: 32GiB
+      GPU: 1
+
+# Cluster settings
+cluster_config:
+  # Ray settings
+  ray_start_timeout: 300
+  ray_start_retries: 3
+  
+  # Dashboard settings
+  dashboard_host: "0.0.0.0"
+  dashboard_port: 8265
+  
+  # Redis settings
+  redis_address: "127.0.0.1:6379"
+  redis_password: ""
+  
+  # Logging
+  log_dir: "/tmp/ray_logs"
+  
+  # Environment variables
+  env_vars:
+    PYTHONPATH: "/home/developer/ai-infra-rag/src"
+    CUDA_VISIBLE_DEVICES: "0,1"
+    RAY_BACKEND_LOG_LEVEL: "INFO"
+
+# RAG-specific settings
+rag_config:
+  # Model distribution
+  model_sharding:
+    enabled: true
+    num_shards: 2
+  
+  # Batch processing
+  batch_size: 32
+  max_batch_size: 64
+  
+  # Load balancing
+  load_balancer:
+    strategy: "round_robin"
+    health_check_interval: 30
+  
+  # Cache settings
+  cache:
+    redis_cluster: true
+    cache_size: "2GB"
+    ttl: 3600

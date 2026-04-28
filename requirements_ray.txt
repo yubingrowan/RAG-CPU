@@ -1,0 +1,24 @@
+# Ray distributed computing framework
+ray[default]==2.8.0
+ray[tune]==2.8.0
+
+# GPU support
+cupy-cuda11x>=12.0.0
+
+# Monitoring and dashboard
+ray[dashboard]==2.8.0
+
+# Additional dependencies for distributed RAG
+psutil>=5.9.0
+aiohttp>=3.8.0
+grpcio>=1.50.0
+grpcio-tools>=1.50.0
+
+# Redis for Ray backend
+redis>=4.5.0
+
+# Kubernetes support (optional)
+kubernetes>=24.2.0
+
+# GPU monitoring
+nvidia-ml-py>=11.5.0
